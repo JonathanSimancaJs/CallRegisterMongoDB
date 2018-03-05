@@ -1,0 +1,49 @@
+<!-- Pagina que se renderiza cuando se guarda una llamada y permite copiar los datos registrados -->
+<!DOCTYPE html>
+<html lang="en">
+  <% include ./partials/head %>
+<body>
+<% include ./partials/navbar %>
+<nav class="navbar navbar-dark bg-dark">
+  <a href="#" class="navbar-brand mx-auto">Llamada guardada</a>
+</nav>
+<div class="container">
+  <div class="form-group">
+    <textarea class="form-control" id="bar" input type ="textarea" rows = "13" cols = "180">
+      Nombre: <%= qs.customer %>
+      Motivo: <%= qs.topic %>
+      Cedula: <%= qs.idcard %>
+      Localidad: <%= qs.local %>
+      Colegio: <%= qs.school %>
+      Sede: <%= qs.place %>
+      Area: <%= qs.area %>
+      Tel. Contacto: <%= qs.phone %>
+      Horario de atencion: <%= qs.schedule %>
+      Dirección: <%= qs.address %>
+      Nota: <%= qs.note %>
+      Casos: <%= qs.caseid %>
+      Agente:
+    </textarea>
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#bar">Copiar</button>
+  </div>
+</div>
+
+  <script src="/js/clipboard.min.js"></script>
+  <script type="text/javascript">
+      var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+  </script>
+</body>
+</html>

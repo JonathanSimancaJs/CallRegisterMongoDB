@@ -1,0 +1,69 @@
+<!-- Pagina que se carga al iniciar sesion y donde se registran las llamadas -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ./partials/head %>
+<body>
+<% include ./partials/navbar %>
+<nav class="navbar navbar-dark bg-dark">
+  <a href="#" class="navbar-brand mx-auto">Registar llamada</a>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-4 card">
+      <form class="card-body" action="/newcall" method="post">
+        <h3 class="card-title">Registrar</h3>
+        <div class="form-group">
+          <input id="first" type="text" name="customer" class="form-control" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <input type="text" name="topic" class="form-control" placeholder="Asunto">
+        </div>
+        <div class="form-group">
+          <input type="text" name="idcard" class="form-control" placeholder="Cedula">
+        </div>
+        <div class="form-group">
+          <input type="text" name="local" class="form-control" placeholder="Localidad">
+        </div>
+        <div class="form-group">
+          <input type="text" name="school" class="form-control" placeholder="Colegio">
+        </div>
+        <div class="form-group">
+          <label class="lead">Sede</label>
+          <select class="" name="place">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="area" class="form-control" placeholder="Area">
+        </div>
+        <div class="form-group">
+          <input type="text" name="phone" class="form-control" placeholder="Teléfono">
+        </div>
+        <div class="form-group">
+          <input type="text" name="schedule" class="form-control" placeholder="Horario">
+        </div>
+        <div class="form-group">
+          <input type="text" name="address" class="form-control" placeholder="Dirección">
+        </div>
+        <div class="form-group">
+          <input type="text" name="note" class="form-control" placeholder="Nota">
+        </div>
+        <div class="form-group">
+          <input type="text" name="caseid" class="form-control" placeholder="Casos">
+        </div>
+        <div class="form-group">
+          <input type="hidden" name="agent" value="<%= user._id%>">
+        </div>
+        <input type="submit" value="Guardar" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  document.getElementById('first').focus();
+</script>
+</body>
+</html>

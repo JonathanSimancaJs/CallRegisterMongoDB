@@ -1,0 +1,55 @@
+<!-- Pagina que renderiza el historico de llamadas -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ./partials/head %>
+<body>
+<% include ./partials/navbar %>
+  <nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-brand mx-auto">Historial de llamadas</a>
+  </nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-4 text-center">
+      <h3>Historial</h3>
+      <table class="table table-striped">
+        <tr>
+          <th>Fecha</th>
+          <th>Nombre</th>
+          <th>Asunto</th>
+          <th>Cedula</th>
+          <th>Localidad</th>
+          <th>Colegio</th>
+          <th>Sede</th>
+          <th>Area</th>
+          <th>Telefono</th>
+          <th>Horario</th>
+          <th>Dirección</th>
+          <th>Nota</th>
+          <th>Casos</th>
+          <th>Agente</th>
+        </tr>
+        <% for(var i = 0; i < calls.length; i++) { %>
+          <tr>
+            <td><%= calls[i].date %></td>
+            <td><%= calls[i].customer %></td>
+            <td><%= calls[i].topic %></td>
+            <td><%= calls[i].idcard %></td>
+            <td><%= calls[i].local %></td>
+            <td><%= calls[i].school %></td>
+            <td><%= calls[i].place %></td>
+            <td><%= calls[i].area %></td>
+            <td><%= calls[i].phone %></td>
+            <td><%= calls[i].schedule %></td>
+            <td><%= calls[i].address %></td>
+            <td><%= calls[i].caseid %></td>
+            <td><%= calls[i].topic %></td>
+            <td><%= calls[i].agent %></td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="/js/coppier.js"></script>
+</body>
+</html>
