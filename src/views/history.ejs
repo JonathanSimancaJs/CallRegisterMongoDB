@@ -4,49 +4,58 @@
 <% include ./partials/head %>
 <body>
 <% include ./partials/navbar %>
-  <nav class="navbar navbar-dark bg-dark">
-    <a href="#" class="navbar-brand mx-auto">Historial de llamadas</a>
-  </nav>
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 mt-4 text-center">
+  <div class="card text-center mt-5">
+    <div class="card-body">
       <h3>Historial</h3>
-      <table class="table table-striped">
-        <tr>
-          <th>Fecha</th>
-          <th>Nombre</th>
-          <th>Asunto</th>
-          <th>Cedula</th>
-          <th>Localidad</th>
-          <th>Colegio</th>
-          <th>Sede</th>
-          <th>Area</th>
-          <th>Telefono</th>
-          <th>Horario</th>
-          <th>Dirección</th>
-          <th>Nota</th>
-          <th>Casos</th>
-          <th>Agente</th>
-        </tr>
-        <% for(var i = 0; i < calls.length; i++) { %>
-          <tr>
-            <td><%= calls[i].date %></td>
-            <td><%= calls[i].customer %></td>
-            <td><%= calls[i].topic %></td>
-            <td><%= calls[i].idcard %></td>
-            <td><%= calls[i].local %></td>
-            <td><%= calls[i].school %></td>
-            <td><%= calls[i].place %></td>
-            <td><%= calls[i].area %></td>
-            <td><%= calls[i].phone %></td>
-            <td><%= calls[i].schedule %></td>
-            <td><%= calls[i].address %></td>
-            <td><%= calls[i].caseid %></td>
-            <td><%= calls[i].topic %></td>
-            <td><%= calls[i].agent %></td>
-          </tr>
-        <% } %>
-      </table>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Asunto</th>
+                    <th>Cedula</th>
+                    <th>Localidad</th>
+                    <th>Colegio</th>
+                    <th>Sede</th>
+                    <th>Area</th>
+                    <th>Telefono</th>
+                    <th>Horario</th>
+                    <th>Dirección</th>
+                    <th>Nota</th>
+                    <th>Casos</th>
+                    <th>Agente</th>
+                  </tr>
+                </thead>
+                <% for(var i = 0; i < calls.length; i++) { %>
+                <tbody
+                  <tr>
+                    <td><%= calls[i].date %></td>
+                    <td><%= calls[i].customer %></td>
+                    <td><%= calls[i].topic %></td>
+                    <td><%= calls[i].idcard %></td>
+                    <td><%= calls[i].local %></td>
+                    <td><%= calls[i].school %></td>
+                    <td><%= calls[i].place %></td>
+                    <td><%= calls[i].area %></td>
+                    <td><%= calls[i].phone %></td>
+                    <td><%= calls[i].schedule %></td>
+                    <td><%= calls[i].address %></td>
+                    <td><%= calls[i].note %></td>
+                    <td><%= calls[i].casid %></td>
+                    <td><%= calls[i].agent %></td>
+                  </tr>
+                </tbody>
+                <% } %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

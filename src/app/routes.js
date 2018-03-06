@@ -26,8 +26,9 @@ module.exports = (app, passport) => {
   }));
 
   app.get('/signup', (req, res) => {
+    console.log(message.lengh);
     res.render('signup', {
-      message: req.flash('signupMessage')
+      message: req.flash('signupMessage')      
     });
   })
 

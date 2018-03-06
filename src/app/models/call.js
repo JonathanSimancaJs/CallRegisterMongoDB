@@ -16,9 +16,9 @@ const callSchema =  new mongoose.Schema({
     address: String,
     note: String,
     caseid: String,
-    agent: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'user'
+      ref: 'users'
     }
 });
 

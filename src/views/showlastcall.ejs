@@ -4,28 +4,32 @@
   <% include ./partials/head %>
 <body>
 <% include ./partials/navbar %>
-<nav class="navbar navbar-dark bg-dark">
-  <a href="#" class="navbar-brand mx-auto">Llamada guardada</a>
-</nav>
+  <div class="container">
+    <div class="card text-center mt-5">
+      <div class="card-body">
+        <h3>Copiar datos</h3>
 <div class="container">
   <div class="form-group">
     <textarea class="form-control" id="bar" input type ="textarea" rows = "13" cols = "180">
-      Nombre: <%= qs.customer %>
-      Motivo: <%= qs.topic %>
-      Cedula: <%= qs.idcard %>
-      Localidad: <%= qs.local %>
-      Colegio: <%= qs.school %>
-      Sede: <%= qs.place %>
-      Area: <%= qs.area %>
-      Tel. Contacto: <%= qs.phone %>
-      Horario de atencion: <%= qs.schedule %>
-      Dirección: <%= qs.address %>
-      Nota: <%= qs.note %>
-      Casos: <%= qs.caseid %>
-      Agente:
+Nombre: <%= qs.customer %>
+Motivo: <%= qs.topic %>
+Cedula: <%= qs.idcard %>
+Localidad: <%= qs.local %>
+Colegio: <%= qs.school %>
+Sede: <%= qs.place %>
+Area: <%= qs.area %>
+Tel. Contacto: <%= qs.phone %>
+Horario de atencion: <%= qs.schedule %>
+Dirección: <%= qs.address %>
+Nota: <%= qs.note %>
+Casos: <%= qs.caseid %>
+Agente: <%= user.login%>
     </textarea>
     <button class="btn" data-clipboard-action="copy" data-clipboard-target="#bar">Copiar</button>
   </div>
+</div>
+</div>
+</div>
 </div>
 
   <script src="/js/clipboard.min.js"></script>
