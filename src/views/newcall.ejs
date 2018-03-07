@@ -1,9 +1,9 @@
 <!-- Pagina que se carga al iniciar sesion y donde se registran las llamadas -->
-<!DOCTYPE html>
-<html lang="en">
-<% include ./partials/head %>
-<body>
+
+<% include ./partials/header %>
+
 <% include ./partials/navbar %>
+
 <div class="container">
   <div class="card text-center mt-5">
     <div class="card-body">
@@ -56,7 +56,7 @@
                   <input type="text" name="caseid" class="form-control form-control-sm" placeholder="Casos">
                 </div>
                 <div class="form-group">
-                  <input type="hidden" name="agent" value="<%= user._id%>">
+                  <input type="hidden" name="user" value="<%= user._id%>">
                 </div>
                 <input type="submit" value="Guardar" class="btn btn-primary">
               </form>
@@ -73,8 +73,11 @@
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
+
   document.getElementById('first').focus();
+  
 </script>
-</body>
-</html>
+
+<% include ./partials/footer %>

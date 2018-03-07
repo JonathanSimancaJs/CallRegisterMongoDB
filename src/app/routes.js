@@ -3,15 +3,15 @@
 module.exports = (app, passport) => {
 
   //Importando modelos
-  const callmodel = require('./models/call');
-  const usermodel = require('./models/user');
+  const callmodel = require('./models/calls');
+  const usermodel = require('./models/users');
   const url = require('url');
 
   app.get('/', (req, res) => {
-    res.render('index', {
-      message: req.flash('loginMessage')
-    });
+    res.render('index');
   })
+
+  //Inicio de sesion
 
   app.get('/login', (req, res) => {
     res.render('login', {
@@ -25,10 +25,11 @@ module.exports = (app, passport) => {
     failureFlash: true
   }));
 
+  //Registro de usuario
+
   app.get('/signup', (req, res) => {
-    console.log(message.lengh);
     res.render('signup', {
-      message: req.flash('signupMessage')      
+      message: req.flash('signupMessage')
     });
   })
 
@@ -38,9 +39,21 @@ module.exports = (app, passport) => {
     failureFlash: true
   }));
 
+  // Rutas de la aplicacion
+
   app.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile', {
       user: req.user
+    });
+  });
+
+  app.post('/update', isLoggedIn, (req, res) => {
+    let id = req.body.id;
+    usermodel.findById(id, (err, users) => {
+      if (err) throw err;
+      users.nameuser = req.body.name,
+      users.save()
+        .then(() => res.redirect('/profile'))
     });
   });
 
@@ -50,7 +63,7 @@ module.exports = (app, passport) => {
     });
   })
 
-  app.post('/newcall', (req, res) => {
+  app.post('/newcall', isLoggedIn, (req, res) => {
     let body = req.body;
     body.status = false;
     callmodel.create(body, (err, calls) => {
@@ -69,14 +82,21 @@ module.exports = (app, passport) => {
     });
   })
 
-  // Icompleto, faltaria consulta avanzada de usuario en metodo populate
   app.get('/history', isLoggedIn, (req, res) => {
     callmodel.find({}, (err, calls) => {
-      if(err) throw err;
-      res.render('history', {
-        calls: calls,
-        user: req.user
+      callmodel.populate(calls, {path : 'user'}, (err, calls) => {
+        if(err) throw err;
+        res.render('history', {
+          calls: calls,
+          user: req.user
+        });
       });
+    });
+  });
+
+  app.get('/info', (req, res) => {
+    res.render('info', {
+      user: req.user
     });
   });
 
