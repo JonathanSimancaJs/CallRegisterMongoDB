@@ -71,6 +71,7 @@ module.exports = (app, passport) => {
       res.redirect(url.format({
         pathname:"/showlastcall",
         query: req.body
+
       }));
     })
   })
