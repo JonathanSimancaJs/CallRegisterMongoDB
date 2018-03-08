@@ -30,81 +30,81 @@ Agente: <%= user.nameuser%></textarea>
           </div>
             <div class="col-md-6 mt-4 card">
               <br>
-              <form class="form-inline">
+              <form class="form-inline" action="/updatecall" method="post">
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Nombre:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.customer %>">
+                  <input type="text" class="form-control" name="customer" value="<%= qs.customer %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Motivo:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <textarea name="name" class="form-control" rows="3" cols="30"><%= qs.topic %></textarea>
+                  <textarea name="topic" class="form-control" rows="3" cols="20"><%= qs.topic %></textarea>
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Cedula:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.idcard %>">
+                  <input type="text" class="form-control" name="idcard" value="<%= qs.idcard %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Localidad:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.local %>">
+                  <input type="text" class="form-control" name="local" value="<%= qs.local %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Colegio:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.school %>">
+                  <input type="text" class="form-control" name="school" value="<%= qs.school %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Sede:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.place %>">
+                  <input type="text" class="form-control" name="place" value="<%= qs.place %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Area:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.area %>">
+                  <input type="text" class="form-control" name="area" value="<%= qs.area %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Tel. Contacto:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.phone %>">
+                  <input type="text" class="form-control" name="phone" value="<%= qs.phone %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Horario:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.schedule %>">
+                  <input type="text" class="form-control" name="schedule" value="<%= qs.schedule %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Dirección:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.address %>">
+                  <input type="text" class="form-control" name="address" value="<%= qs.address %>">
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Nota:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <textarea name="name" class="form-control" rows="3" cols="30"><%= qs.note %></textarea>
+                  <textarea name="note" class="form-control" rows="3" cols="20"><%= qs.note %></textarea>
                 </div>
                 <div class="form-group mb-2">
                   <input type="text" readonly class="form-control-plaintext" value="Casos:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs.caseid %>">
+                  <input type="text" class="form-control" name="caseid" value="<%= qs.caseid %>">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" name="" value="<%= qs._id %>">
+                  <input type="hidden" class="form-control" name="id" value="<%= qs.idcall %>">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Actualizar</button>
               </form>

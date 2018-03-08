@@ -70,8 +70,21 @@ module.exports = (app, passport) => {
       if (err) throw err;
       res.redirect(url.format({
         pathname:"/showlastcall",
-        query: req.body
-
+        query:{
+          customer: req.body.customer,
+          topic: req.body.topic,
+          idcard: req.body.idcard,
+          local: req.body.local,
+          school: req.body.school,
+          place: req.body.place,
+          area: req.body.area,
+          phone: req.body.phone,
+          schedule: req.body.schedule,
+          address: req.body.address,
+          note: req.body.note,
+          caseid: req.body.caseid,
+          idcall: calls.id
+        }
       }));
     })
   })
@@ -82,6 +95,27 @@ module.exports = (app, passport) => {
       user: req.user
     });
   })
+
+  app.post('/updatecall', isLoggedIn, (req, res) => {
+    let id = req.body.id;
+    callmodel.findById(id, (err, calls) => {
+      if (err) throw err;
+      calls.customer = req.body.customer,
+      calls.topic = req.body.topic,
+      calls.idcard = req.body.idcard,
+      calls.local = req.body.local,
+      calls.school = req.body.school,
+      calls.place = req.body.place,
+      calls.area = req.body.area,
+      calls.phone = req.body.phone,
+      calls.schedule = req.body.schedule,
+      calls.address = req.body.address,
+      calls.note = req.body.note,
+      calls.caseid = req.body.caseid,
+      calls.save()
+        .then(() => res.redirect('/newcall'))
+    });
+  });
 
   app.get('/history', isLoggedIn, (req, res) => {
     callmodel.find({}, (err, calls) => {
