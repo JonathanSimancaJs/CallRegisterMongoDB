@@ -18,12 +18,12 @@ Cedula: <%= qs.idcard %>
 Localidad: <%= qs.local %>
 Colegio: <%= qs.school %>
 Sede: <%= qs.place %>
-Area: <%= qs.area %>
+Área: <%= qs.area %>
 Tel. Contacto: <%= qs.phone %>
-Horario de atencion: <%= qs.schedule %>
+Horario de atención: <%= qs.schedule %>
 Dirección: <%= qs.address %>
 Nota: <%= qs.note %>
-Agente: <%= user.nameuser%></textarea>
+Análista: <%= user.nameuser%></textarea>
           <div class="">
             <button class="btn btn-primary" data-clipboard-action="copy" data-clipboard-target="#bar">Copiar</button>
           </div>
@@ -38,7 +38,7 @@ Agente: <%= user.nameuser%></textarea>
                   <input type="text" class="form-control" name="customer" value="<%= qs.customer %>">
                 </div>
                 <div class="form-group mb-2">
-                  <input type="text" readonly class="form-control-plaintext" value="Motivo:">
+                  <input type="text" readonly class="form-control-plaintext" value="Asunto:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
                   <textarea name="topic" class="form-control" rows="3" cols="20"><%= qs.topic %></textarea>

@@ -7,12 +7,12 @@
 <div class="container">
   <div class="card text-center mt-5">
     <div class="card-body">
-      <h3>Registar llamada</h2>
+      <h3>Ficha de registro</h2>
         <div class="container">
           <div class="row">
             <div class="col-md-6 mt-4 card">
               <form class="card-body" action="/newcall" method="post">
-                <h4 class="card-title">Registrar</h4>
+                <h4 class="card-title">Datos de la llamada</h4>
                 <div class="form-group">
                   <input id="first" type="text" name="customer" class="form-control form-control-sm" placeholder="Nombre">
                 </div>
@@ -33,10 +33,11 @@
                     <option value="B">B</option>
                     <option value="C">C</option>
                     <option value="D">D</option>
+                    <option value="E">E</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <input type="text" name="area" class="form-control form-control-sm" placeholder="Area">
+                  <input type="text" name="area" class="form-control form-control-sm" placeholder="Área">
                 </div>
                 <div class="form-group">
                   <input type="text" name="phone" class="form-control form-control-sm" placeholder="Teléfono">
@@ -60,9 +61,17 @@
               </form>
             </div>
             <div class="col-md-6 mt-4 card">
-              <div class="form-group">
-                <label for="exampleTextarea">Otras Notas</label>
-                <textarea class="form-control" rows="3"></textarea>
+              <div class="container">
+                <div class="card-body">
+                  <br>
+                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Información</div>
+                    <div class="card-body">
+                      <h4 class="card-title">Cuentas Maestras</h4>
+                      <p class="card-text">Es necesario que los rectores se comuniquen con los bancos para revisar los requerimientos técnicos para la cuenta maestra  e ingreso a su portal bancario, se requiere que esta información sea oficiada mediante un correo a ALICIA AIDEE CASTRO LOPEZ acastrol@educacionbogota.gov.co con copia a MHARYORHY ALEJANDRA ROMERO MUÑOZ maromero@educacionbogota.gov.co o mediante un oficio dirigido a la OAREDP.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             </div>

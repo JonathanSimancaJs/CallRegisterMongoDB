@@ -13,14 +13,14 @@
         <div class="card">
           <div class="card-body">
             <h3 class="card-title">
-              <span class="fa fa-user"> Agente</span>
+              <span><i class="fas fa-user"></i> Agente</span>
               <p>
                 <strong>Login: </strong><%= user.login%> <br>
                 <strong>Nombre: </strong><%= user.nameuser%>
                 <form class="" action="/update" method="post">
                   <input type="hidden" name="id" value="<%= user.id%>">
-                  <input type="text" name="name" placeholder="Nombre">
-                  <input type="submit"  value="Actualizar">
+                  <input class="form-control" type="text" name="name" placeholder="Nombre">
+                  <input class="btn btn-primary" type="submit"  value="Actualizar">
                 </form>
               </p>
             </h3>
