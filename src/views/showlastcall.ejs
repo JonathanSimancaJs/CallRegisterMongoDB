@@ -13,8 +13,8 @@
                 <br>
                 <textarea class="form-control" id="bar" input type ="textarea" rows = "14" cols = "13">
 Nombre: <%= qs.customer %>
-Motivo: <%= qs.topic %>
-Cedula: <%= qs.idcard %>
+Asunto: <%= qs.topic %>
+Cédula: <%= qs.idcard %>
 Localidad: <%= qs.local %>
 Colegio: <%= qs.school %>
 Sede: <%= qs.place %>
@@ -23,7 +23,7 @@ Tel. Contacto: <%= qs.phone %>
 Horario de atención: <%= qs.schedule %>
 Dirección: <%= qs.address %>
 Nota: <%= qs.note %>
-Análista: <%= user.nameuser%></textarea>
+Analista: <%= user.nameuser%></textarea>
           <div class="">
             <button class="btn btn-primary" data-clipboard-action="copy" data-clipboard-target="#bar">Copiar</button>
           </div>
@@ -44,7 +44,7 @@ Análista: <%= user.nameuser%></textarea>
                   <textarea name="topic" class="form-control" rows="3" cols="20"><%= qs.topic %></textarea>
                 </div>
                 <div class="form-group mb-2">
-                  <input type="text" readonly class="form-control-plaintext" value="Cedula:">
+                  <input type="text" readonly class="form-control-plaintext" value="Cédula:">
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
                   <input type="text" class="form-control" name="idcard" value="<%= qs.idcard %>">
