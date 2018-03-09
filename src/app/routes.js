@@ -58,9 +58,9 @@ module.exports = (app, passport) => {
   });
 
   app.get('/newcall', isLoggedIn, (req,res) => {
-    res.render('newcall', {
-      user: req.user
-    });
+      res.render('newcall', {
+        user: req.user
+    })
   })
 
   app.post('/newcall', isLoggedIn, (req, res) => {
@@ -117,16 +117,27 @@ module.exports = (app, passport) => {
     });
   });
 
-  app.get('/history', isLoggedIn, (req, res) => {
-    callmodel.find({}, (err, calls) => {
-      callmodel.populate(calls, {path : 'user'}, (err, calls) => {
-        if(err) throw err;
-        res.render('history', {
-          calls: calls,
-          user: req.user
+  app.get('/history/:page', isLoggedIn, (req, res, next) => {
+    let perPage = 5;
+    let page = req.params.page || 1;
+
+    callmodel
+        .find({})
+        .skip((perPage * page)- perPage)
+        .limit(perPage)
+        .exec((err, calls) => {
+          callmodel.count((err, count) => {
+            callmodel.populate(calls, {path: 'user'}, (err, calls) => {
+              if(err) return next(err);
+              res.render('history', {
+                calls,
+                current:page,
+                pages: Math.ceil(count / perPage),
+                user: req.user
+              });
+            });
+          });
         });
-      });
-    });
   });
 
   app.get('/info', (req, res) => {

@@ -30,6 +30,7 @@ app.set('view engine', 'ejs');
 //middlewares para la ejecución de complementos
 app.use(morgan('dev'));
 app.use(cookieParser());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(session({
   secret: 'S3cur1ty2018byj0n4th4ns1m4nc4',
